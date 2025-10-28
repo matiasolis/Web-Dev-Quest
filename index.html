@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!--
+    Project: WebDev Quest — Visual HTML & CSS Learning
+    Author: Your Name
+    Description: A gamified, interactive platform teaching HTML & CSS with live previews, challenges, and progress tracking.
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Learn HTML & CSS visually with live editors, instant previews, and gamified challenges." />
+  <title>WebDev Quest — Learn HTML & CSS by Doing</title>
+
+  <!-- Favicons & theme -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%27.9em%27 font-size=%2790%27>🏆</text></svg>">
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Prism.js for syntax highlighting (read-only examples) -->
+  <link href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.css" rel="stylesheet" />
+  <script defer src="https://unpkg.com/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script defer src="https://unpkg.com/prismjs@1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+  <script defer src="https://unpkg.com/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script defer src="https://unpkg.com/prismjs@1.29.0/components/prism-css.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Skip to content for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header: logo, primary nav, mode toggle, progress summary -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="WebDev Quest Home">
+        <span class="logo-mark" aria-hidden="true">⟨/⟩</span>
+        WebDev Quest
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#html-lessons">HTML</a></li>
+          <li><a href="#css-lessons">CSS</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </nav>
+
+      <!-- Light/Dark mode toggle -->
+      <button id="mode-toggle" class="btn btn-outline" aria-pressed="false" aria-label="Toggle light or dark mode">
+        <span class="mode-icon" aria-hidden="true">🌞</span>
+        <span class="mode-text">Light</span>
+      </button>
+
+      <!-- Progress bar summary -->
+      <div class="progress-summary" aria-label="Overall progress">
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress-fill"></div>
+        </div>
+        <span class="progress-percent">0%</span>
+      </div>
+
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <div class="menu-icon" aria-hidden="true"></div>
+      </button>
+    </div>
+
+    <!-- Mobile drawer menu -->
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <ul>
+        <li><a href="#html-lessons">HTML</a></li>
+        <li><a href="#css-lessons">CSS</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Intro hero with subtle logo reveal animation -->
+  <section class="hero" aria-label="Introduction">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1>Learn HTML & CSS by doing</h1>
+        <p>Type code, see instant results, earn badges, and build real intuition. It’s hands-on, visual, and fun.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#html-lessons">Start HTML</a>
+          <a class="btn btn-secondary" href="#css-lessons">Explore CSS</a>
+        </div>
+        <ul class="hero-highlights" role="list">
+          <li><strong>Live editor:</strong> Split view with instant preview</li>
+          <li><strong>Gamified:</strong> Points & badges for each challenge</li>
+          <li><strong>Accessible:</strong> Light/Dark mode and semantic structure</li>
+        </ul>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="logo-reveal">
+          <span>⟨/⟩</span>
+        </div>
+        <div class="glass-card">
+          <pre class="preview-code">h1 { color: #0ea5e9; }</pre>
+          <div class="preview-output"><h1>Instant Preview</h1></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-gradient" aria-hidden="true"></div>
+  </section>
+
+  <main id="main">
+    <!-- Badges / gamification status -->
+    <section class="section" id="badges">
+      <div class="container">
+        <header class="section-header">
+          <h2>Your badges</h2>
+          <p>Complete challenges to unlock badges and track your progress.</p>
+        </header>
+        <div class="badge-grid">
+          <div class="badge-card" data-badge="html-init">
+            <div class="badge-icon">📄</div>
+            <div class="badge-info">
+              <h3>HTML Initiate</h3>
+              <p>Create your first heading and paragraph.</p>
+            </div>
+            <div class="badge-status">Locked</div>
+          </div>
+          <div class="badge-card" data-badge="list-master">
+            <div class="badge-icon">🧾</div>
+            <div class="badge-info">
+              <h3>List Master</h3>
+              <p>Build a clean shopping list.</p>
+            </div>
+            <div class="badge-status">Locked</div>
+          </div>
+          <div class="badge-card" data-badge="style-spark">
+            <div class="badge-icon">🎨</div>
+            <div class="badge-info">
+              <h3>Style Spark</h3>
+              <p>Apply meaningful colors and typography.</p>
+            </div>
+            <div class="badge-status">Locked</div>
+          </div>
+          <div class="badge-card" data-badge="motion-mage">
+            <div class="badge-icon">✨</div>
+            <div class="badge-info">
+              <h3>Motion Mage</h3>
+              <p>Create a delightful hover transition.</p>
+            </div>
+            <div class="badge-status">Locked</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HTML Lessons -->
+    <section id="html-lessons" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>HTML lessons</h2>
+          <p>Structure content with semantic tags and build readable documents.</p>
+        </header>
+
+        <!-- Lesson: HTML Basics -->
+        <article class="lesson-card" data-lesson-id="html-basics" aria-labelledby="html-basics-title">
+          <div class="lesson-header">
+            <h3 id="html-basics-title">HTML basics</h3>
+            <p>Start with headings and paragraphs. The foundation of the web.</p>
+          </div>
+
+          <!-- Visual explanation (read-only, highlighted with Prism) -->
+          <div class="explain">
+            <div class="explain-card">
+              <h4>What is a tag?</h4>
+              <p>HTML uses tags like <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> to define content.</p>
+              <pre class="language-markup"><code>
+&lt;h1&gt;Page Title&lt;/h1&gt;
+&lt;p&gt;This is a paragraph explaining the page.&lt;/p&gt;
+              </code></pre>
+            </div>
+          </div>
+
+          <!-- Split-screen live editor -->
+          <div class="split">
+            <div class="editor-pane" data-editor>
+              <div class="editor-toolbar">
+                <span class="editor-title">HTML editor</span>
+                <div class="toolbar-actions">
+                  <button class="btn btn-ghost" data-reset>Reset</button>
+                  <button class="btn btn-outline" data-run>Run</button>
+                </div>
+              </div>
+              <textarea class="code-input" aria-label="HTML code editor" spellcheck="false">
+<h1>Hello, Quest!</h1>
+<p>Edit me and press Run to update the preview.</p>
+              </textarea>
+
+              <!-- Challenge -->
+              <div class="exercise">
+                <p><strong>Challenge:</strong> Change the heading text to “Welcome to WebDev Quest”.</p>
+                <button class="btn btn-check" data-check data-check-type="text" data-check-selector="h1" data-expected="Welcome to WebDev Quest">Check</button>
+                <p class="exercise-feedback" role="status" aria-live="polite"></p>
+                <div class="success-check" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <div class="output-pane">
+              <iframe title="Live HTML preview" class="live-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lesson: Lists -->
+        <article class="lesson-card" data-lesson-id="html-lists" aria-labelledby="html-lists-title">
+          <div class="lesson-header">
+            <h3 id="html-lists-title">Lists</h3>
+            <p>Group related items cleanly with <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>.</p>
+          </div>
+
+          <div class="explain">
+            <div class="explain-card">
+              <h4>Unordered list</h4>
+              <pre class="language-markup"><code>
+&lt;ul&gt;
+  &lt;li&gt;Apples&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;Bread&lt;/li&gt;
+&lt;/ul&gt;
+              </code></pre>
+            </div>
+          </div>
+
+          <div class="split">
+            <div class="editor-pane" data-editor>
+              <div class="editor-toolbar">
+                <span class="editor-title">HTML editor</span>
+                <div class="toolbar-actions">
+                  <button class="btn btn-ghost" data-reset>Reset</button>
+                  <button class="btn btn-outline" data-run>Run</button>
+                </div>
+              </div>
+              <textarea class="code-input" aria-label="HTML code editor" spellcheck="false">
+<h1>Shopping list</h1>
+<ul>
+  <li>Apples</li>
+  <li>Milk</li>
+  <li>Bread</li>
+</ul>
+              </textarea>
+
+              <div class="exercise">
+                <p><strong>Challenge:</strong> Add a new list item: “Eggs”.</p>
+                <button class="btn btn-check" data-check data-check-type="exists" data-check-selector="li" data-contains="Eggs">Check</button>
+                <p class="exercise-feedback" role="status" aria-live="polite"></p>
+                <div class="success-check" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <div class="output-pane">
+              <iframe title="Live HTML preview" class="live-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CSS Lessons -->
+    <section id="css-lessons" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>CSS lessons</h2>
+          <p>Style your content with color, layout, and motion.</p>
+        </header>
+
+        <!-- Lesson: Selectors & Typography -->
+        <article class="lesson-card" data-lesson-id="css-typography" aria-labelledby="css-typography-title">
+          <div class="lesson-header">
+            <h3 id="css-typography-title">Selectors and typography</h3>
+            <p>Use class selectors to style text and improve readability.</p>
+          </div>
+
+          <div class="explain">
+            <div class="explain-card">
+              <h4>Class selector</h4>
+              <pre class="language-css"><code>
+.title { color: #0ea5e9; font-size: 28px; }
+.desc { color: #475569; line-height: 1.6; }
+              </code></pre>
+            </div>
+          </div>
+
+          <div class="split">
+            <div class="editor-pane" data-editor data-mode="htmlcss">
+              <div class="editor-toolbar">
+                <span class="editor-title">HTML & CSS editors</span>
+                <div class="toolbar-actions">
+                  <button class="btn btn-ghost" data-reset>Reset</button>
+                  <button class="btn btn-outline" data-run>Run</button>
+                </div>
+              </div>
+
+              <label class="editor-label" for="css-typography-html">HTML</label>
+              <textarea id="css-typography-html" class="code-input" aria-label="HTML code editor" spellcheck="false">
+<div class="card">
+  <h1 class="title">Welcome</h1>
+  <p class="desc">This text is styled with CSS.</p>
+</div>
+              </textarea>
+
+              <label class="editor-label" for="css-typography-css">CSS</label>
+              <textarea id="css-typography-css" class="code-input" aria-label="CSS code editor" spellcheck="false">
+.card {
+  padding: 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.title {
+  color: #0ea5e9; /* Try changing this color */
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.desc {
+  color: #475569;
+  line-height: 1.6;
+}
+              </textarea>
+
+              <div class="exercise">
+                <p><strong>Challenge:</strong> Change the <code>.title</code> color to green.</p>
+                <button class="btn btn-check" data-check data-check-type="css" data-check-selector=".title" data-css-prop="color" data-expected="green">Check</button>
+                <p class="exercise-feedback" role="status" aria-live="polite"></p>
+                <div class="success-check" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <div class="output-pane">
+              <iframe title="Live CSS preview" class="live-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lesson: Hover & Transitions -->
+        <article class="lesson-card" data-lesson-id="css-hover" aria-labelledby="css-hover-title">
+          <div class="lesson-header">
+            <h3 id="css-hover-title">Hover effects and transitions</h3>
+            <p>Add smooth, delightful motion for interactive elements.</p>
+          </div>
+
+          <div class="explain">
+            <div class="explain-card">
+              <h4>Hover transition</h4>
+              <pre class="language-css"><code>
+.fancy-btn {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.fancy-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+              </code></pre>
+            </div>
+          </div>
+
+          <div class="split">
+            <div class="editor-pane" data-editor data-mode="htmlcss">
+              <div class="editor-toolbar">
+                <span class="editor-title">HTML & CSS editors</span>
+                <div class="toolbar-actions">
+                  <button class="btn btn-ghost" data-reset>Reset</button>
+                  <button class="btn btn-outline" data-run>Run</button>
+                </div>
+              </div>
+
+              <label class="editor-label" for="css-hover-html">HTML</label>
+              <textarea id="css-hover-html" class="code-input" aria-label="HTML code editor" spellcheck="false">
+<button class="fancy-btn">Hover me</button>
+              </textarea>
+
+              <label class="editor-label" for="css-hover-css">CSS</label>
+              <textarea id="css-hover-css" class="code-input" aria-label="CSS code editor" spellcheck="false">
+.fancy-btn {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #0ea5e9, #7c3aed);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(124,58,237,0.25);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.fancy-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 14px 28px rgba(124,58,237,0.35);
+}
+              </textarea>
+
+              <div class="exercise">
+                <p><strong>Challenge:</strong> Increase the hover scale to <code>scale(1.1)</code>.</p>
+                <button class="btn btn-check" data-check data-check-type="css" data-check-selector=".fancy-btn:hover" data-css-prop="transform" data-expected="scale(1.1)">Check</button>
+                <p class="exercise-feedback" role="status" aria-live="polite"></p>
+                <div class="success-check" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <div class="output-pane">
+              <iframe title="Live CSS preview" class="live-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Resources / Cheat Sheet -->
+    <section id="resources" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Resources and cheat sheet</h2>
+          <p>Quick references to HTML tags and CSS properties.</p>
+        </header>
+
+        <div class="resources-grid">
+          <div class="resource-card">
+            <h3>HTML tags</h3>
+            <ul>
+              <li><strong>Headings:</strong> h1–h6</li>
+              <li><strong>Text:</strong> p, span, strong, em</li>
+              <li><strong>Lists:</strong> ul, ol, li</li>
+              <li><strong>Media:</strong> img, video</li>
+              <li><strong>Structure:</strong> header, main, section, article, footer</li>
+            </ul>
+          </div>
+
+          <div class="resource-card">
+            <h3>CSS basics</h3>
+            <ul>
+              <li><strong>Selectors:</strong> .class, #id, element</li>
+              <li><strong>Colors:</strong> color, background</li>
+              <li><strong>Typography:</strong> font-size, line-height, font-weight</li>
+              <li><strong>Layout:</strong> display, margin, padding, border, flexbox, grid</li>
+              <li><strong>Effects:</strong> box-shadow, border-radius, transition, transform</li>
+            </ul>
+          </div>
+
+          <div class="resource-card links">
+            <h3>Helpful links</h3>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">MDN — HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">MDN — CSS</a></li>
+              <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">W3Schools — HTML</a></li>
+              <li><a href="https://www.w3schools.com/css/" target="_blank" rel="noopener">W3Schools — CSS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="#">
+          <span class="logo-mark" aria-hidden="true">⟨/⟩</span>
+          WebDev Quest
+        </a>
+        <p>Built to help beginners learn by doing — fast, visual, and fun.</p>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#html-lessons">HTML</a></li>
+          <li><a href="#css-lessons">CSS</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </nav>
+      <div class="footer-meta">
+        <p>&copy; <span id="year"></span> WebDev Quest. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
