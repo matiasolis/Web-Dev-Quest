@@ -1,485 +1,292 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <!--
-    Project: WebDev Quest — Visual HTML & CSS Learning
-    Author: Your Name
-    Description: A gamified, interactive platform teaching HTML & CSS with live previews, challenges, and progress tracking.
-  -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Learn HTML & CSS visually with live editors, instant previews, and gamified challenges." />
-  <title>WebDev Quest — Learn HTML & CSS by Doing</title>
-
-  <!-- Favicons & theme -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%27.9em%27 font-size=%2790%27>🏆</text></svg>">
-  <meta name="theme-color" content="#0ea5e9" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Prism.js for syntax highlighting (read-only examples) -->
-  <link href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.css" rel="stylesheet" />
-  <script defer src="https://unpkg.com/prismjs@1.29.0/components/prism-core.min.js"></script>
-  <script defer src="https://unpkg.com/prismjs@1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
-  <script defer src="https://unpkg.com/prismjs@1.29.0/components/prism-markup.min.js"></script>
-  <script defer src="https://unpkg.com/prismjs@1.29.0/components/prism-css.min.js"></script>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL IMPOSTOR | STREET STYLE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Skip to content for accessibility -->
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Header: logo, primary nav, mode toggle, progress summary -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#" aria-label="WebDev Quest Home">
-        <span class="logo-mark" aria-hidden="true">⟨/⟩</span>
-        WebDev Quest
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <ul class="nav-list">
-          <li><a href="#html-lessons">HTML</a></li>
-          <li><a href="#css-lessons">CSS</a></li>
-          <li><a href="#resources">Resources</a></li>
-        </ul>
-      </nav>
-
-      <!-- Light/Dark mode toggle -->
-      <button id="mode-toggle" class="btn btn-outline" aria-pressed="false" aria-label="Toggle light or dark mode">
-        <span class="mode-icon" aria-hidden="true">🌞</span>
-        <span class="mode-text">Light</span>
-      </button>
-
-      <!-- Progress bar summary -->
-      <div class="progress-summary" aria-label="Overall progress">
-        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-          <div class="progress-fill"></div>
-        </div>
-        <span class="progress-percent">0%</span>
-      </div>
-
-      <!-- Mobile menu toggle -->
-      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="sr-only">Toggle navigation</span>
-        <div class="menu-icon" aria-hidden="true"></div>
-      </button>
-    </div>
-
-    <!-- Mobile drawer menu -->
-    <div id="mobile-menu" class="mobile-menu" hidden>
-      <ul>
-        <li><a href="#html-lessons">HTML</a></li>
-        <li><a href="#css-lessons">CSS</a></li>
-        <li><a href="#resources">Resources</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <!-- Intro hero with subtle logo reveal animation -->
-  <section class="hero" aria-label="Introduction">
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <h1>Learn HTML & CSS by doing</h1>
-        <p>Type code, see instant results, earn badges, and build real intuition. It’s hands-on, visual, and fun.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#html-lessons">Start HTML</a>
-          <a class="btn btn-secondary" href="#css-lessons">Explore CSS</a>
-        </div>
-        <ul class="hero-highlights" role="list">
-          <li><strong>Live editor:</strong> Split view with instant preview</li>
-          <li><strong>Gamified:</strong> Points & badges for each challenge</li>
-          <li><strong>Accessible:</strong> Light/Dark mode and semantic structure</li>
-        </ul>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="logo-reveal">
-          <span>⟨/⟩</span>
-        </div>
-        <div class="glass-card">
-          <pre class="preview-code">h1 { color: #0ea5e9; }</pre>
-          <div class="preview-output"><h1>Instant Preview</h1></div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-gradient" aria-hidden="true"></div>
-  </section>
-
-  <main id="main">
-    <!-- Badges / gamification status -->
-    <section class="section" id="badges">
-      <div class="container">
-        <header class="section-header">
-          <h2>Your badges</h2>
-          <p>Complete challenges to unlock badges and track your progress.</p>
-        </header>
-        <div class="badge-grid">
-          <div class="badge-card" data-badge="html-init">
-            <div class="badge-icon">📄</div>
-            <div class="badge-info">
-              <h3>HTML Initiate</h3>
-              <p>Create your first heading and paragraph.</p>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">EL IMPOSTOR</span>
+                <span class="logo-tag">STREET</span>
             </div>
-            <div class="badge-status">Locked</div>
-          </div>
-          <div class="badge-card" data-badge="list-master">
-            <div class="badge-icon">🧾</div>
-            <div class="badge-info">
-              <h3>List Master</h3>
-              <p>Build a clean shopping list.</p>
-            </div>
-            <div class="badge-status">Locked</div>
-          </div>
-          <div class="badge-card" data-badge="style-spark">
-            <div class="badge-icon">🎨</div>
-            <div class="badge-info">
-              <h3>Style Spark</h3>
-              <p>Apply meaningful colors and typography.</p>
-            </div>
-            <div class="badge-status">Locked</div>
-          </div>
-          <div class="badge-card" data-badge="motion-mage">
-            <div class="badge-icon">✨</div>
-            <div class="badge-info">
-              <h3>Motion Mage</h3>
-              <p>Create a delightful hover transition.</p>
-            </div>
-            <div class="badge-status">Locked</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HTML Lessons -->
-    <section id="html-lessons" class="section">
-      <div class="container">
-        <header class="section-header">
-          <h2>HTML lessons</h2>
-          <p>Structure content with semantic tags and build readable documents.</p>
-        </header>
-
-        <!-- Lesson: HTML Basics -->
-        <article class="lesson-card" data-lesson-id="html-basics" aria-labelledby="html-basics-title">
-          <div class="lesson-header">
-            <h3 id="html-basics-title">HTML basics</h3>
-            <p>Start with headings and paragraphs. The foundation of the web.</p>
-          </div>
-
-          <!-- Visual explanation (read-only, highlighted with Prism) -->
-          <div class="explain">
-            <div class="explain-card">
-              <h4>What is a tag?</h4>
-              <p>HTML uses tags like <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> to define content.</p>
-              <pre class="language-markup"><code>
-&lt;h1&gt;Page Title&lt;/h1&gt;
-&lt;p&gt;This is a paragraph explaining the page.&lt;/p&gt;
-              </code></pre>
-            </div>
-          </div>
-
-          <!-- Split-screen live editor -->
-          <div class="split">
-            <div class="editor-pane" data-editor>
-              <div class="editor-toolbar">
-                <span class="editor-title">HTML editor</span>
-                <div class="toolbar-actions">
-                  <button class="btn btn-ghost" data-reset>Reset</button>
-                  <button class="btn btn-outline" data-run>Run</button>
-                </div>
-              </div>
-              <textarea class="code-input" aria-label="HTML code editor" spellcheck="false">
-<h1>Hello, Quest!</h1>
-<p>Edit me and press Run to update the preview.</p>
-              </textarea>
-
-              <!-- Challenge -->
-              <div class="exercise">
-                <p><strong>Challenge:</strong> Change the heading text to “Welcome to WebDev Quest”.</p>
-                <button class="btn btn-check" data-check data-check-type="text" data-check-selector="h1" data-expected="Welcome to WebDev Quest">Check</button>
-                <p class="exercise-feedback" role="status" aria-live="polite"></p>
-                <div class="success-check" aria-hidden="true"></div>
-              </div>
-            </div>
-
-            <div class="output-pane">
-              <iframe title="Live HTML preview" class="live-frame" sandbox="allow-scripts allow-same-origin"></iframe>
-            </div>
-          </div>
-        </article>
-
-        <!-- Lesson: Lists -->
-        <article class="lesson-card" data-lesson-id="html-lists" aria-labelledby="html-lists-title">
-          <div class="lesson-header">
-            <h3 id="html-lists-title">Lists</h3>
-            <p>Group related items cleanly with <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>.</p>
-          </div>
-
-          <div class="explain">
-            <div class="explain-card">
-              <h4>Unordered list</h4>
-              <pre class="language-markup"><code>
-&lt;ul&gt;
-  &lt;li&gt;Apples&lt;/li&gt;
-  &lt;li&gt;Milk&lt;/li&gt;
-  &lt;li&gt;Bread&lt;/li&gt;
-&lt;/ul&gt;
-              </code></pre>
-            </div>
-          </div>
-
-          <div class="split">
-            <div class="editor-pane" data-editor>
-              <div class="editor-toolbar">
-                <span class="editor-title">HTML editor</span>
-                <div class="toolbar-actions">
-                  <button class="btn btn-ghost" data-reset>Reset</button>
-                  <button class="btn btn-outline" data-run>Run</button>
-                </div>
-              </div>
-              <textarea class="code-input" aria-label="HTML code editor" spellcheck="false">
-<h1>Shopping list</h1>
-<ul>
-  <li>Apples</li>
-  <li>Milk</li>
-  <li>Bread</li>
-</ul>
-              </textarea>
-
-              <div class="exercise">
-                <p><strong>Challenge:</strong> Add a new list item: “Eggs”.</p>
-                <button class="btn btn-check" data-check data-check-type="exists" data-check-selector="li" data-contains="Eggs">Check</button>
-                <p class="exercise-feedback" role="status" aria-live="polite"></p>
-                <div class="success-check" aria-hidden="true"></div>
-              </div>
-            </div>
-
-            <div class="output-pane">
-              <iframe title="Live HTML preview" class="live-frame" sandbox="allow-scripts allow-same-origin"></iframe>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- CSS Lessons -->
-    <section id="css-lessons" class="section">
-      <div class="container">
-        <header class="section-header">
-          <h2>CSS lessons</h2>
-          <p>Style your content with color, layout, and motion.</p>
-        </header>
-
-        <!-- Lesson: Selectors & Typography -->
-        <article class="lesson-card" data-lesson-id="css-typography" aria-labelledby="css-typography-title">
-          <div class="lesson-header">
-            <h3 id="css-typography-title">Selectors and typography</h3>
-            <p>Use class selectors to style text and improve readability.</p>
-          </div>
-
-          <div class="explain">
-            <div class="explain-card">
-              <h4>Class selector</h4>
-              <pre class="language-css"><code>
-.title { color: #0ea5e9; font-size: 28px; }
-.desc { color: #475569; line-height: 1.6; }
-              </code></pre>
-            </div>
-          </div>
-
-          <div class="split">
-            <div class="editor-pane" data-editor data-mode="htmlcss">
-              <div class="editor-toolbar">
-                <span class="editor-title">HTML & CSS editors</span>
-                <div class="toolbar-actions">
-                  <button class="btn btn-ghost" data-reset>Reset</button>
-                  <button class="btn btn-outline" data-run>Run</button>
-                </div>
-              </div>
-
-              <label class="editor-label" for="css-typography-html">HTML</label>
-              <textarea id="css-typography-html" class="code-input" aria-label="HTML code editor" spellcheck="false">
-<div class="card">
-  <h1 class="title">Welcome</h1>
-  <p class="desc">This text is styled with CSS.</p>
-</div>
-              </textarea>
-
-              <label class="editor-label" for="css-typography-css">CSS</label>
-              <textarea id="css-typography-css" class="code-input" aria-label="CSS code editor" spellcheck="false">
-.card {
-  padding: 16px;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-.title {
-  color: #0ea5e9; /* Try changing this color */
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-.desc {
-  color: #475569;
-  line-height: 1.6;
-}
-              </textarea>
-
-              <div class="exercise">
-                <p><strong>Challenge:</strong> Change the <code>.title</code> color to green.</p>
-                <button class="btn btn-check" data-check data-check-type="css" data-check-selector=".title" data-css-prop="color" data-expected="green">Check</button>
-                <p class="exercise-feedback" role="status" aria-live="polite"></p>
-                <div class="success-check" aria-hidden="true"></div>
-              </div>
-            </div>
-
-            <div class="output-pane">
-              <iframe title="Live CSS preview" class="live-frame" sandbox="allow-scripts allow-same-origin"></iframe>
-            </div>
-          </div>
-        </article>
-
-        <!-- Lesson: Hover & Transitions -->
-        <article class="lesson-card" data-lesson-id="css-hover" aria-labelledby="css-hover-title">
-          <div class="lesson-header">
-            <h3 id="css-hover-title">Hover effects and transitions</h3>
-            <p>Add smooth, delightful motion for interactive elements.</p>
-          </div>
-
-          <div class="explain">
-            <div class="explain-card">
-              <h4>Hover transition</h4>
-              <pre class="language-css"><code>
-.fancy-btn {
-  transition: transform 200ms ease, box-shadow 200ms ease;
-}
-.fancy-btn:hover {
-  transform: translateY(-2px) scale(1.05);
-}
-              </code></pre>
-            </div>
-          </div>
-
-          <div class="split">
-            <div class="editor-pane" data-editor data-mode="htmlcss">
-              <div class="editor-toolbar">
-                <span class="editor-title">HTML & CSS editors</span>
-                <div class="toolbar-actions">
-                  <button class="btn btn-ghost" data-reset>Reset</button>
-                  <button class="btn btn-outline" data-run>Run</button>
-                </div>
-              </div>
-
-              <label class="editor-label" for="css-hover-html">HTML</label>
-              <textarea id="css-hover-html" class="code-input" aria-label="HTML code editor" spellcheck="false">
-<button class="fancy-btn">Hover me</button>
-              </textarea>
-
-              <label class="editor-label" for="css-hover-css">CSS</label>
-              <textarea id="css-hover-css" class="code-input" aria-label="CSS code editor" spellcheck="false">
-.fancy-btn {
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #0ea5e9, #7c3aed);
-  color: white;
-  font-weight: 600;
-  box-shadow: 0 10px 20px rgba(124,58,237,0.25);
-  transition: transform 200ms ease, box-shadow 200ms ease;
-}
-.fancy-btn:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 14px 28px rgba(124,58,237,0.35);
-}
-              </textarea>
-
-              <div class="exercise">
-                <p><strong>Challenge:</strong> Increase the hover scale to <code>scale(1.1)</code>.</p>
-                <button class="btn btn-check" data-check data-check-type="css" data-check-selector=".fancy-btn:hover" data-css-prop="transform" data-expected="scale(1.1)">Check</button>
-                <p class="exercise-feedback" role="status" aria-live="polite"></p>
-                <div class="success-check" aria-hidden="true"></div>
-              </div>
-            </div>
-
-            <div class="output-pane">
-              <iframe title="Live CSS preview" class="live-frame" sandbox="allow-scripts allow-same-origin"></iframe>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Resources / Cheat Sheet -->
-    <section id="resources" class="section">
-      <div class="container">
-        <header class="section-header">
-          <h2>Resources and cheat sheet</h2>
-          <p>Quick references to HTML tags and CSS properties.</p>
-        </header>
-
-        <div class="resources-grid">
-          <div class="resource-card">
-            <h3>HTML tags</h3>
-            <ul>
-              <li><strong>Headings:</strong> h1–h6</li>
-              <li><strong>Text:</strong> p, span, strong, em</li>
-              <li><strong>Lists:</strong> ul, ol, li</li>
-              <li><strong>Media:</strong> img, video</li>
-              <li><strong>Structure:</strong> header, main, section, article, footer</li>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#game" class="nav-link">GAME</a></li>
+                <li><a href="#gallery" class="nav-link">GALLERY</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
             </ul>
-          </div>
-
-          <div class="resource-card">
-            <h3>CSS basics</h3>
-            <ul>
-              <li><strong>Selectors:</strong> .class, #id, element</li>
-              <li><strong>Colors:</strong> color, background</li>
-              <li><strong>Typography:</strong> font-size, line-height, font-weight</li>
-              <li><strong>Layout:</strong> display, margin, padding, border, flexbox, grid</li>
-              <li><strong>Effects:</strong> box-shadow, border-radius, transition, transform</li>
-            </ul>
-          </div>
-
-          <div class="resource-card links">
-            <h3>Helpful links</h3>
-            <ul>
-              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">MDN — HTML</a></li>
-              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">MDN — CSS</a></li>
-              <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">W3Schools — HTML</a></li>
-              <li><a href="https://www.w3schools.com/css/" target="_blank" rel="noopener">W3Schools — CSS</a></li>
-            </ul>
-          </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">EL</span>
+                <span class="title-line">IMPOSTOR</span>
+            </h1>
+            <p class="hero-subtitle">STREET CULTURE | URBAN ART | REAL TALK</p>
+            <div class="hero-tagline">
+                <span class="tagline-text">NO FAKES</span>
+                <span class="tagline-divider">|</span>
+                <span class="tagline-text">ALL REAL</span>
+            </div>
+            <a href="#about" class="cta-button">ENTER THE STREETS</a>
+        </div>
+        <div class="graffiti-bg"></div>
     </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a class="logo" href="#">
-          <span class="logo-mark" aria-hidden="true">⟨/⟩</span>
-          WebDev Quest
-        </a>
-        <p>Built to help beginners learn by doing — fast, visual, and fun.</p>
-      </div>
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="#html-lessons">HTML</a></li>
-          <li><a href="#css-lessons">CSS</a></li>
-          <li><a href="#resources">Resources</a></li>
-        </ul>
-      </nav>
-      <div class="footer-meta">
-        <p>&copy; <span id="year"></span> WebDev Quest. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">WHO WE ARE</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-paragraph">
+                        Born from the streets, built for the culture. EL IMPOSTOR represents 
+                        the raw, unfiltered voice of urban life. We don't follow trends—we set them.
+                    </p>
+                    <p class="about-paragraph">
+                        This is where authenticity meets attitude. Where the real recognize the real.
+                        No filters, no fronts, just pure street energy.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">REAL</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">0%</span>
+                        <span class="stat-label">FAKE</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">STREET</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- App scripts -->
-  <script src="script.js"></script>
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">THE STREETS</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up">
+                    <div class="gallery-image">
+                        <div class="image-placeholder street-1"></div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">URBAN</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-image">
+                        <div class="image-placeholder street-2"></div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">CULTURE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-image">
+                        <div class="image-placeholder street-3"></div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">ART</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-image">
+                        <div class="image-placeholder street-4"></div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">REAL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="gallery-image">
+                        <div class="image-placeholder street-5"></div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">STREET</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="gallery-image">
+                        <div class="image-placeholder street-6"></div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">RAW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="game">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">FIND THE IMPOSTOR</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="game-container">
+                <!-- Room Selection Screen -->
+                <div class="room-selection" id="roomSelection">
+                    <div class="room-options">
+                        <div class="room-option">
+                            <h3 class="room-option-title">CREATE ROOM</h3>
+                            <div class="room-input-wrapper">
+                                <input type="text" id="createPlayerName" class="game-input" placeholder="YOUR NAME" maxlength="20">
+                                <button id="createRoomBtn" class="game-btn-create">CREATE</button>
+                            </div>
+                        </div>
+                        <div class="room-divider">
+                            <span>OR</span>
+                        </div>
+                        <div class="room-option">
+                            <h3 class="room-option-title">JOIN ROOM</h3>
+                            <div class="room-input-wrapper">
+                                <input type="text" id="joinPlayerName" class="game-input" placeholder="YOUR NAME" maxlength="20">
+                                <input type="text" id="roomCodeInput" class="game-input" placeholder="ROOM CODE" maxlength="6">
+                                <button id="joinRoomBtn" class="game-btn-join">JOIN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room Lobby -->
+                <div class="room-lobby" id="roomLobby" style="display: none;">
+                    <div class="lobby-header">
+                        <div class="room-info">
+                            <h3 class="lobby-title">ROOM CODE</h3>
+                            <div class="room-code-display" id="roomCodeDisplay"></div>
+                            <p class="room-password-label">PASSWORD: <span id="roomPasswordDisplay"></span></p>
+                        </div>
+                        <div class="player-count">
+                            <span id="playerCount">0</span> / <span id="maxPlayers">12</span> PLAYERS
+                        </div>
+                    </div>
+                    <div class="lobby-players">
+                        <h4 class="lobby-subtitle">PLAYERS</h4>
+                        <div id="lobbyPlayersList" class="lobby-players-list"></div>
+                    </div>
+                    <div class="lobby-actions">
+                        <button id="startGameBtn" class="game-btn-start" disabled>START GAME</button>
+                        <button id="leaveRoomBtn" class="game-btn-leave">LEAVE ROOM</button>
+                    </div>
+                    <div class="lobby-status" id="lobbyStatus">
+                        <p>WAITING FOR PLAYERS... (MINIMUM 4 REQUIRED)</p>
+                    </div>
+                </div>
+
+                <!-- Game Play Area -->
+                <div class="game-play-area" id="gamePlayArea" style="display: none;">
+                    <div class="game-timer">
+                        <div class="timer-circle">
+                            <svg class="timer-svg" viewBox="0 0 100 100">
+                                <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="timer-progress" id="timerProgress" cx="50" cy="50" r="45"></circle>
+                            </svg>
+                            <div class="timer-text" id="timerText">10</div>
+                        </div>
+                    </div>
+                    <div class="game-word-display">
+                        <div class="word-container">
+                            <h2 class="game-word" id="gameWord">WAITING...</h2>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <p class="game-instruction" id="gameInstruction">READY TO START</p>
+                    </div>
+                </div>
+
+                <!-- Round Result -->
+                <div class="round-result" id="roundResult" style="display: none;">
+                    <div class="result-content">
+                        <h3 class="result-title">ROUND OVER</h3>
+                        <div class="result-word-display">
+                            <p class="result-label">THE WORD WAS:</p>
+                            <div class="result-word" id="resultWord"></div>
+                        </div>
+                        <div class="result-impostor" id="resultImpostor" style="display: none;">
+                            <p class="result-label">THE IMPOSTOR WAS:</p>
+                            <div class="result-name" id="impostorName"></div>
+                        </div>
+                        <div class="result-actions">
+                            <button id="nextRoundBtn" class="game-btn-next-round">NEXT ROUND</button>
+                            <button id="backToLobbyBtn" class="game-btn-back-lobby">BACK TO LOBBY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">CONNECT</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-title">GET IN TOUCH</h3>
+                    <p class="contact-text">
+                        Hit us up if you're about that real street life.
+                        No cap, just real connections.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">INSTAGRAM</a>
+                        <a href="#" class="social-link">TWITTER</a>
+                        <a href="#" class="social-link">TIKTOK</a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="NAME" class="form-input" required>
+                    <input type="email" placeholder="EMAIL" class="form-input" required>
+                    <textarea placeholder="MESSAGE" class="form-textarea" rows="5" required></textarea>
+                    <button type="submit" class="form-submit">SEND IT</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2024 EL IMPOSTOR | STREET STYLE</p>
+                <p class="footer-tagline">KEEP IT REAL</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

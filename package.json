@@ -1,0 +1,24 @@
+{
+  "name": "el-impostor-multiplayer",
+  "version": "1.0.0",
+  "description": "Multiplayer Impostor Game - Street Style",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "game",
+    "multiplayer",
+    "impostor"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.1",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
